@@ -8,9 +8,8 @@ def read_csv_data(file_path):
     Returns:
         list: data split row
     """
-    #result_data =file_path.split(/n)
-    print(type(file_path))
-    result_data=file_path.split('\n')
+    s=file_path.split('\n')
+    result_data=[i for i in s]
     
     
     # WRITE YOUR CODE HERE
