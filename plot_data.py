@@ -18,7 +18,19 @@ def show(gender, weight, height):
     h_female = []
     
     #WRITE YOUR CODE HERE
-
+    for x, y, z in zip(gender, weight, height):
+        if x == 0:
+            w_male.append(y)
+            h_male.append(z)
+        if x == 1:
+            w_female.append(y)
+            h_female.append(z)
+        
+    for x, y in zip(w_male, h_male):
+        plt.scatter(x,y, color = 'blue')
+    
+    for x, y in zip(w_female, h_female):
+        plt.scatter(x,y, color = 'red')
     plt.show()
 
 data = read_csv_data('data/weight-height.csv')
