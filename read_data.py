@@ -9,12 +9,14 @@ def read_csv_data(file_path):
         list: data split row
     """
     s=file_path.split('\n')
-    result_data=[i for i in s]
+    result_data=[]
+    for i in s:
+        result_data.append(i)
     
     
     # WRITE YOUR CODE HERE
     return result_data
 file_path=open('data/weight-height.csv').read()
-print(read_csv_data(file_path))
+read_csv_data(file_path)
 
     
