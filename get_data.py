@@ -1,5 +1,5 @@
 from read_data import read_csv_data
-print(read_csv_data)
+
 
 def get_data(data):
     """
@@ -19,6 +19,23 @@ def get_data(data):
     
     # WRITE YOUR CODE HERE
     #print(data_result)
+    #print(data)
+    col=[]
+    data1=data.split('\n')
+
+    for i in range(len(data1)):
+        for col in data[i].values():
+            if val == 'Male':
+                gender.append(0)
+            elif val == 'Female':
+                gender.append(1)
+
+
+        for k in data[i].keys():
+            if k == 'Height':
+                height.append(float(data[i][k])/2.54)
+            if k == 'Weight':
+                weight.append(float(data[i][k])*2.205)
+       
 
     return gender,weight,height
-get_data(read_csv_data)
