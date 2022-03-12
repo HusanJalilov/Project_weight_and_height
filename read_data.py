@@ -8,15 +8,17 @@ def read_csv_data(file_path):
     Returns:
         list: data split row
     """
-    s=file_path.split('\n')
-    result_data=[]
-    for i in s:
-        result_data.append(i)
-    
-    
     # WRITE YOUR CODE HERE
-    return result_data
-file_path=open('data/weight-height.csv').read()
-read_csv_data(file_path)
-
+    result_data = []
+    reader = ''
+    with open(file_path, newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            result_data.append(row)
     
+    #print(result_data)
+    
+    return result_data
+
+file_path = 'data/weight-height.csv'
+read_csv_data(file_path)
